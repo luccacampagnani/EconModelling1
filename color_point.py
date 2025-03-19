@@ -32,6 +32,7 @@ class ColorPoint(Point):
 #color_point.sort()
 #print(color_point)
 
-p = ColorPoint(1, 2, "red")
-print(p.distance_origin())
-print(p)
+if __name__ =="__main__":
+    p = ColorPoint(1, 2, "red")
+    print(p.distance_origin())
+    print(p)
