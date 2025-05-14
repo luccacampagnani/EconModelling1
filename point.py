@@ -3,17 +3,17 @@ import random
 class Point: # You have to use capital letter for it to be a class
     def __init__(self, x, y): # you can change the name of self to whatever u want
         """
-        Initialize a Point object
-        :param x: the x position on the axis
-        :param y: the y position on the axis
+        Create a point with x and y coordinates
+        :param x: horizontal position
+        :param y: vertical position
         """
         self.x = x # define x attribute via self.x and the assign the value of x to it
         self.y = y
 
     def __str__(self):
         """
-        Magic method that is called when we try to print an instance
-        :return: <x, y>
+        Called when you print the object
+        :return: string like <x, y>
         """
         return f"<{self.x}, {self.y}>"
 
@@ -21,9 +21,18 @@ class Point: # You have to use capital letter for it to be a class
         return self.__str__() #use same way of printing as str
 
     def distance_origin(self):
+        """
+        Calculate how far the point is from (0, 0)
+        :return: distance value
+        """
         return (self.x**2 + self.y**2)**0.5 # square root of the sum of x
 
     def __gt__(self, other):
+        """
+        Compare two points by their distance from the origin
+        :param other: another Point object
+        :return: True if self is farther than other
+        """
         my_distance = self.distance_origin()
         other_distance = other.distance_origin()
         return my_distance > other_distance
